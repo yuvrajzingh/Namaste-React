@@ -1,58 +1,30 @@
 import React from "react";
 import  ReactDOM  from "react-dom/client";
-
+import './app.css';
 
 // ASSIGNMENT - 02, pt. 01
 
 
-const header = React.createElement(
-    "div",
-    {className: "title"},
-    [React.createElement(
-        "h1",
-        {},
-        "Hi"
-    ),
-    React.createElement(
-        "h2",
-        {},
-        "My name is "
-    ),
-    React.createElement(
-        "h3",
-        {},
-        "Yuvraj"
-    )]
-);
-
-const headerJSX = (
-    <div className="title">
-        <h1>Hi</h1>
-        <h2>My name is</h2>
-        <h3>Yuvraj</h3>
-    </div>
-);
-
-const CompComp = () => {
+const Header = () => {
     return (
-        <h1>This is Component Composition</h1>
-    )
-}
+        <div className="header">
+            
+            <img className="logo" src={"https://play-lh.googleusercontent.com/cShys-AmJ93dB0SV8kE6Fl5eSaf4-qMMZdwEDKI5VEmKAXfzOqbiaeAsqqrEBCTdIEs=w240-h480-rw"} width={100}/>
 
-const HeaderFunComp = () => {
-    return (
-        <div className="title">
-            <h1>Hi</h1>
-            <h2>My name is</h2>
-            <h3>Yuvraj</h3>
-            <CompComp/>
+            <div className="searchBar">
+                <input type="text" />
+                <button>Search</button>
+            </div>
+
+            <img className="user" src={"https://frank151.com/wp-content/uploads/2023/07/cenral-artist.webp"} width={100}/>
+
         </div>
     );
 }
 
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(<HeaderFunComp/>);
+root.render(<Header/>);
 
+export default Header;
